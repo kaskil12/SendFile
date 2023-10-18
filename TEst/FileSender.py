@@ -5,7 +5,7 @@ receiver_ip = '192.168.98.170'  # Receiver's IP address
 receiver_port = 3000  # Receiver's listening port
 
 # Replace with the path to the file you want to send
-file_to_send = 'adadada.txt'
+file_to_send = 'dadada\\adadada.txt'
 
 def send_file():
     client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -14,7 +14,7 @@ def send_file():
         client.connect((receiver_ip, receiver_port))
         print(f"Connected to {receiver_ip}:{receiver_port}")
         
-        with open(file_to_send, 'rb') as file:
+        with open(file_to_send, 'r', encoding="utf8") as file:
             while True:
                 data = file.read(1024)
                 if not data:
