@@ -1,6 +1,6 @@
 @echo off
-:: Specify the path to your C# program
-set csharp_program_path="FileSender.Cs"
+:: Specify the path to your Python script
+set python_script_path="FileSender.py"
 
-:: Execute the C# program
-start "" "%csharp_program_path%"
+:: Execute the Python script
+python %python_script_path%
