@@ -6,7 +6,7 @@ listen_port = 3000
 
 
 # Replace with the path where you want to save the received file
-output_file_path = 'login.txt'
+output_file_path = 'C:\\Users\\kaspe\\OneDrive\\Documents\\GitHub\\SendFile\\pyut\\login\\logfile.txt'
 
 def receive_file():
     server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -18,7 +18,7 @@ def receive_file():
     conn, addr = server.accept()
     print(f"Connection from: {addr[0]}:{addr[1]}")
 
-    with open(output_file_path, 'wb') as file:
+    with open(output_file_path, 'a', encoding="utf8") as file:
         while True:
             data = conn.recv(1024)
             if not data:
